@@ -11,7 +11,7 @@ def read_tweets_from_csv(file_path='tweets_data_world_Cup.csv'):
 
 # Example usage
 # Replace 'your_file_path.csv' with the actual file path if it's different
-df_read = read_tweets_from_csv('tweets.csv')
+df_read = read_tweets_from_csv('tweets_data_world_Cup.csv')
 
 # Display the DataFrame (optional)
 if df_read is not None:

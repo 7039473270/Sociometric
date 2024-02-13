@@ -7,12 +7,12 @@ import pandas as pd
 def perform_sentiment_analysis(df):
     nltk.download('vader_lexicon')
     sia = SentimentIntensityAnalyzer()
-    df['clean_text'] = df['text'].apply(lambda x: ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", x).split()))
+    df['clean_text'] = df['Tweet'].apply(lambda x: ' '.join(re.sub("(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", x).split()))
     df['compound'] = df['clean_text'].apply(lambda x: sia.polarity_scores(x)['compound'])
     df['sentiment'] = df['compound'].apply(lambda score: 'positive' if score >= 0 else 'negative')
     return df
 
-# Example usage
-# df = pd.read_csv('tweets.csv')
-# df = perform_sentiment_analysis(df)
-# print(df.head())
+#Example usage
+df = pd.read_csv('tweets_data_world_Cup.csv')
+df = perform_sentiment_analysis(df)
+print(df.head())
