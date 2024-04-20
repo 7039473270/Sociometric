@@ -1,0 +1,45 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'GT Super', sans-serif; /* Changed font to GT Super */
+    background: linear-gradient(to bottom right, #1b1464, #7a3b8e); /* Dark blue to deep purple gradient background */
+    color: #fff;
+  }
+  
+  .landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjusted to use viewport height */
+  }
+  
+  .landing-text {
+    font-size: 6em; /* Increased font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: pulse 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Adding some hover effect */
+  .landing-text:hover {
+    animation: none;
+    transform: scale(1.1);
+  }
+  
+  /* Adding a subtle box-shadow to landing div */
+  .landing {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White box shadow */
+  }
+  
